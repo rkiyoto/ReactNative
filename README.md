@@ -10,6 +10,6 @@ http://rogerdudler.github.io/git-guide/
 <p> Você vai precisar de Node, Watchman, linhas de comando do React Native e o Xcode</p>
 <p>Node e Watchman:
   instalar usando o Homebrew
-<ul>brew install node
-brew install watchman</ul>
+<ul>brew install node</ul>
+<ul>brew install watchman</ul>
 
