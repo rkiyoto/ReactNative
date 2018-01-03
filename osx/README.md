@@ -5,3 +5,9 @@
   instalar usando o Homebrew
 <ul>brew install node</ul>
 <ul>brew install watchman</ul>
+
+<p>The React Native CLI
+<ul>npm install -g react-native-cli</ul>
+
+<p>Java Development Kit
+  <a>http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a>
