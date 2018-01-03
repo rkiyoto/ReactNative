@@ -21,7 +21,7 @@
   </a></ul>
 
 <h1>Criando nova aplicação</h1>
-<p> No diretório desejado, insira
+<p style="color:red;"> No diretório desejado, insira </p>
 <ul>react-native init AwesomeProject</ul>
 
 <h1>Executando no simulador</h1>
