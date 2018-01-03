@@ -28,4 +28,4 @@
 <ul> cd AwesomeProject</ul>
 <ul> react-native run-android</ul>
 
-<h1 style="color:Red;"> Falar sobre execução no dispositivo</h1>
+<h1 style="color:red;"> Falar sobre execução no dispositivo</h1>
