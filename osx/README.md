@@ -13,3 +13,9 @@
   <ul>
   <a>http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a>
   </ul>
+
+
+<p> Segue por aqui, foda-se
+  <ul><a>
+  https://facebook.github.io/react-native/docs/getting-started.html  
+  </a></ul>
