@@ -6,16 +6,24 @@ import {
   View,
   TextInput,
   Button,
-  Image
+  Image,
+  Alert
 } from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'CATIAU,\n' +
-    'Instruções do iPhone',
-  android: 'Instruções do Android', /* Altere aqui */
-});
+export class Login extends Component {
 
-export default class App extends Component<{}> {
+  _alert = () => {
+    Alert.alert(
+      'Ops',
+      'Ainda nao implementado',
+      [
+        {text: 'Beleza.', onPress: () => console.log('OK Pressed')},
+      ],
+      { cancelable: true }
+    )
+  }
+
+
   render() {
     return (
       <View style={styles.container}>
@@ -58,7 +66,7 @@ export default class App extends Component<{}> {
             />
           </View>
           <Button
-            /*onPress={onPressLearnMore}*/
+            onPress={this._alert}
 
             title="OK"
             color='rgb(0,200,200)'
