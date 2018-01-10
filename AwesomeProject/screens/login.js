@@ -9,18 +9,68 @@ import {
   Image,
   Alert
 } from 'react-native';
+import {Navigation} from 'react-native-navigation';
+//
+// class Blink extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {showText: true};
+//
+//     // Toggle the state every second
+//     setInterval(() => {
+//       this.setState(previousState => {
+//         return { showText: !previousState.showText };
+//       });
+//     }, 1000);
+//   }
+//
+//   render() {
+//     let display = this.state.showText ? this.props.text : ' ';
+//     return (
+//       <Text style={{color: 'white', fontSize: 20}}>{display}</Text>
+//     );
+//   }
+// }
+
 
 export class Login extends Component {
+  constructor(props) {
+    super(props);
 
-  _alert = () => {
-    Alert.alert(
-      'Ops',
-      'Ainda nao implementado',
-      [
-        {text: 'Beleza.', onPress: () => console.log('OK Pressed')},
-      ],
-      { cancelable: true }
-    )
+    this.state = {
+      login: '',
+      senha: '',
+    };
+  }
+
+
+  _login = () => {
+    if(this.state.login != 'demo'){
+      Alert.alert(
+        'Ops',
+        'Usuário e senha não encontrados',
+        [
+          {text: 'Beleza.', onPress: () => console.log('OK Pressed')},
+        ],
+        {cancelable: true}
+      )
+    }
+    else {
+      Navigation.startSingleScreenApp({
+        screen: {
+          screen: 'Home',
+          title: 'Home',
+          navigatorStyle: {
+            navBarHidden: false,
+            navBarTranslucent: false,
+            drawUnderNavBar: false,
+            navBarBackgroundColor: '#283593',
+            navBarTextColor: 'white',
+            statusBarColor: '#283593'
+          }
+        }
+      });
+    }
   }
 
 
@@ -46,8 +96,9 @@ export class Login extends Component {
               placeholderTextColor='rgba(0,255,255,0.3)'
               underlineColorAndroid='rgba(0,255,255,0.3)'
               keyboardType='email-address'
-              /*onChangeText={(text) => this.setState({text})}
-              value={this.state.text}*/
+              autoCapitalize='none'
+              onChangeText={(text) => this.setState({login: text})}
+              // value={this.state.login}
             />
           </View>
           <View style={styles.horizontalView}>
@@ -61,16 +112,16 @@ export class Login extends Component {
               underlineColorAndroid='rgba(0,255,255,0.3)'
               keyboardType='default'
               secureTextEntry={true}
-              /*onChangeText={(text) => this.setState({text})}
-              value={this.state.text}*/
+              onChangeText={(text) => this.setState({senha: text})}
+              // value={this.state.senha}
             />
           </View>
           <Button
-            onPress={this._alert}
-
+            onPress={this._login}
             title="OK"
             color='rgb(0,200,200)'
-            accessibilityLabel="Learn more about this purple button"
+            //disabled={this.state.login && this.state.senha? false : true}
+            accessibilityLabel="Verificar credenciais"
           />
         </View>
       </View>
@@ -94,6 +145,7 @@ const styles = StyleSheet.create({
   imageView: {
     flex:1,
     justifyContent: 'center',
+    alignItems: 'center'
   },
   loginLabels: {
     textAlign: 'center',
