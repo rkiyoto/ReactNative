@@ -1,10 +1,11 @@
 import  React, { Component } from 'react';
-import {AppRegistry} from 'react-native';
-import { Navigation } from 'react-native-navigation';
+import { Navigation, Screen } from 'react-native-navigation';
 
 import {Login} from './screens/login';
+import {Home}  from './screens/home';
 
 Navigation.registerComponent('Login', () => Login);
+Navigation.registerComponent('Home',  () => Home);
 
 Navigation.startSingleScreenApp({
   screen: {
