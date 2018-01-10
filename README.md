@@ -6,3 +6,5 @@ Passo a passo para criar uma aplicação simples
 http://rogerdudler.github.io/git-guide/
 
 <h5>Verifique as subpastas do seu sistema operacional</h5>
+
+<p> Node_modules não importado, grande demais
