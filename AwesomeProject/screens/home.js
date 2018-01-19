@@ -2,26 +2,31 @@ import React, {Component} from 'react';
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  Button
 } from 'react-native';
+import {Navigation} from 'react-native-navigation';
 
 export class Home extends Component {
-  constructor(props){
-    super(props);
 
-  }
-/*
   static navigatorButtons = {
     rightButtons: [{
-        title: 'Novo',
-        id: 'novo'
+        icon: require('../images/add.png'),
+        id: 'novo',
+        buttonColor: 'white',
+        buttonFontSize: 16,
     }]
   };
-*/
+
+  constructor(props){
+    super(props);
+  }
+
 
 render() {
   return(
     <View style={style=styles.backgroundView}>
+     <Text>Home</Text>
     </View>
   )
 }

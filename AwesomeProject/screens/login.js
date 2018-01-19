@@ -56,19 +56,36 @@ export class Login extends Component {
       )
     }
     else {
-      Navigation.startSingleScreenApp({
-        screen: {
-          screen: 'Home',
-          title: 'Home',
-          navigatorStyle: {
-            navBarHidden: false,
-            navBarTranslucent: false,
-            drawUnderNavBar: false,
-            navBarBackgroundColor: '#283593',
-            navBarTextColor: 'white',
-            statusBarColor: '#283593'
-          }
-        }
+      Navigation.startTabBasedApp({
+        tabs: [
+          {
+            label: 'Home',
+            title: 'Home',
+            screen: 'Home',
+            icon: require('../images/home.png'),
+            navigatorStyle:{
+                drawUnderNavBar: false,
+                navBarTextColor: 'white',
+                navBarBackgroundColor: '#283593',
+                statusBarColor: '#283593',
+              }
+            },
+            {
+              label: 'Config',
+              title: 'Config',
+              screen:'Settings',
+              icon: require('../images/profile.png'),
+              navigatorStyle:{
+                  drawUnderNavBar: false,
+                  navBarTextColor: '#e8eaf6',
+                  navBarBackgroundColor: '#283593',
+                  statusBarColor: '#283593',
+            }
+          },
+        ],
+        appStyle: {
+          orientation: 'portrait'
+        },
       });
     }
   }
@@ -91,10 +108,10 @@ export class Login extends Component {
             </Text>
 
             <TextInput
-              style={{height: 40, width: 200, color: 'rgba(0,255,255,0.8)', fontSize: 18}}
+              style={{height: 40, width: 200, color: '#e8eaf6', fontSize: 18}}
               placeholder='Login'
-              placeholderTextColor='rgba(0,255,255,0.3)'
-              underlineColorAndroid='rgba(0,255,255,0.3)'
+              placeholderTextColor='#e8eaf6'
+              underlineColorAndroid='#e8eaf6'
               keyboardType='email-address'
               autoCapitalize='none'
               onChangeText={(text) => this.setState({login: text})}
@@ -106,10 +123,10 @@ export class Login extends Component {
               Senha
             </Text>
             <TextInput
-              style={{height: 40, width: 200, color : 'rgba(0,255,255,0.8)', fontSize: 18}}
+              style={{height: 40, width: 200, color : '#e8eaf6', fontSize: 18}}
               placeholder='Senha'
-              placeholderTextColor='rgba(0,255,255,0.3)'
-              underlineColorAndroid='rgba(0,255,255,0.3)'
+              placeholderTextColor='#e8eaf6'
+              underlineColorAndroid='#e8eaf6'
               keyboardType='default'
               secureTextEntry={true}
               onChangeText={(text) => this.setState({senha: text})}
@@ -119,7 +136,7 @@ export class Login extends Component {
           <Button
             onPress={this._login}
             title="OK"
-            color='rgb(0,200,200)'
+            color='#e8eaf6'
             //disabled={this.state.login && this.state.senha? false : true}
             accessibilityLabel="Verificar credenciais"
           />
