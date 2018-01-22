@@ -10,29 +10,6 @@ import {
   Alert
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
-//
-// class Blink extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {showText: true};
-//
-//     // Toggle the state every second
-//     setInterval(() => {
-//       this.setState(previousState => {
-//         return { showText: !previousState.showText };
-//       });
-//     }, 1000);
-//   }
-//
-//   render() {
-//     let display = this.state.showText ? this.props.text : ' ';
-//     return (
-//       <Text style={{color: 'white', fontSize: 20}}>{display}</Text>
-//     );
-//   }
-// }
-
-
 export class Login extends Component {
   constructor(props) {
     super(props);
@@ -45,7 +22,9 @@ export class Login extends Component {
 
 
   _login = () => {
+
     /*
+
     if(this.state.login != 'demo'){
       Alert.alert(
         'Ops',
@@ -57,6 +36,7 @@ export class Login extends Component {
       )
     }
     else {
+
     */
       Navigation.startTabBasedApp({
         tabs: [
@@ -92,7 +72,24 @@ export class Login extends Component {
           tabBarTranslucent: true,
         },
       });
-    /*}*/
+    /* } */
+
+      Navigation.startSingleScreenApp({
+        screen: {
+          screen: 'Home',
+          title: 'Home',
+          navigatorStyle: {
+            navBarHidden: false,
+            navBarTranslucent: false,
+            drawUnderNavBar: false,
+            navBarBackgroundColor: '#283593',
+            navBarTextColor: 'white',
+            statusBarColor: '#283593'
+          }
+        }
+      });
+    }
+
   }
 
 
