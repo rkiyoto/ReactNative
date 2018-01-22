@@ -13,7 +13,11 @@ export class EditProfile extends Component{
   constructor(props){
     super(props);
 
-    this.state = {};
+    this.state = {
+      nome: '',
+      email: '',
+      telefone: ''
+    };
   }
 
 
@@ -29,7 +33,7 @@ export class EditProfile extends Component{
               placeholderTextColor='lightgray'
               underlineColorAndroid='lightgray'
               keyboardType='default'
-              onChangeText= {(text) => this.setState(nome: text)}
+              onChangeText={(text) => this.setState({nome: text})}
             />
           </View>
 
@@ -42,6 +46,7 @@ export class EditProfile extends Component{
               underlineColorAndroid='lightgray'
               keyboardType='email-address'
               autoCapitalize='none'
+              onChangeText={(text) => this.setState({email: text})}
             />
           </View>
 
@@ -53,6 +58,7 @@ export class EditProfile extends Component{
               placeholderTextColor='lightgray'
               underlineColorAndroid='lightgray'
               keyboardType='phone-pad'
+              onChangeText={(text) => this.setState({telefone: text})}
             />
           </View>
         </View>
@@ -63,7 +69,12 @@ export class EditProfile extends Component{
           color='#009688'
           //disabled={this.state.login && this.state.senha? false : true}
           accessibilityLabel="Confirmar mudanças de login"
-          onPress={this.props.atualizaDados}
+          onPress={
+            () => {this.props.atualizaDados(this.state.nome, this.state.email, this.state.telefone),
+              this.props.navigator.dismissModal({
+                animationType: 'fade' // 'none' / 'slide-down' , dismiss animation for the modal (optional, default 'slide-down')
+              });}
+          }
           />
         </View>
       </View>

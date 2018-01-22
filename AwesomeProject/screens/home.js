@@ -20,6 +20,7 @@ export class Home extends Component {
 
   constructor(props){
     super(props);
+    /*https://stackoverflow.com/questions/30571875/whats-the-difference-between-super-and-superprops-in-react-when-using-e*/
   }
 
 

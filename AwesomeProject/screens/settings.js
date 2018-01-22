@@ -30,8 +30,11 @@ export class Settings extends Component {
     };
   }
 
-  atualizaDados(){
-    this.setState({nome: 'Rafael'});
+  atualizaDados(_nome, _email, _telefone){
+    this.setState({nome: _nome});
+    this.setState({email: _email});
+    this.setState({telefone: _telefone});
+    /*
     Alert.alert(
       'Done.',
       'Nome alterado',
@@ -40,6 +43,7 @@ export class Settings extends Component {
       ],
       {cancelable: true}
     )
+    */
   }
 
   onNavigatorEvent(event) {

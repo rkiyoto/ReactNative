@@ -45,6 +45,7 @@ export class Login extends Component {
 
 
   _login = () => {
+    /*
     if(this.state.login != 'demo'){
       Alert.alert(
         'Ops',
@@ -56,6 +57,7 @@ export class Login extends Component {
       )
     }
     else {
+    */
       Navigation.startTabBasedApp({
         tabs: [
           {
@@ -84,10 +86,13 @@ export class Login extends Component {
           },
         ],
         appStyle: {
-          orientation: 'portrait'
+          orientation: 'portrait',
+          tabBarBackgroundColor: '#e8eaf6',
+          tabBarButtonColor: '#283593',
+          tabBarTranslucent: true,
         },
       });
-    }
+    /*}*/
   }
 
 
