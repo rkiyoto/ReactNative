@@ -102,7 +102,7 @@ export class Login extends Component {
         <View style={styles.imageView}>
           <Image
             style={{width: 200, height: 200}}
-            tintColor='#e8eaf6'
+            tintColor='#ffffff'
             source={require('../images/reactLogo.png')}
           />
         </View>
@@ -141,7 +141,7 @@ export class Login extends Component {
           <Button
             onPress={this._login}
             title="OK"
-            color='#e8eaf6'
+            color='#FFB84C'
             //disabled={this.state.login && this.state.senha? false : true}
             accessibilityLabel="Verificar credenciais"
           />
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#283593',
+    backgroundColor: '#3C6FA9',
   },
   welcome: {
     fontSize: 14,
